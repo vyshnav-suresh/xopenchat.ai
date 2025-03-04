@@ -1,8 +1,8 @@
-EchoChat
+X Open Chat
 
 🚀 Overview
 
-EchoChat is an AI-powered conversational assistant built using Next.js and OpenRouter API. It provides real-time chat capabilities with a sleek, user-friendly interface, making AI interactions seamless and efficient.
+X Open Chat is an AI-powered conversational assistant built using Next.js and OpenRouter API. It provides real-time chat capabilities with a sleek, user-friendly interface, making AI interactions seamless and efficient.
 
 🛠 Tech Stack
 
@@ -30,8 +30,8 @@ Deployment: Vercel
 
 Clone the repository:
 
-git clone https://github.com/yourusername/echochat.git
-cd echochat
+git clone https://github.com/yourusername/X Open Chat.git
+cd X Open Chat
 
 Install dependencies:
 
