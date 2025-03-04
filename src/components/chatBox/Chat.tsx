@@ -102,7 +102,7 @@ export default function Chat() {
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-300 dark:border-gray-700">
           <h1 className="text-lg font-semibold text-gray-700 dark:text-white">
-            EchoChat
+             X Open Chat 
           </h1>
 
           {/* ✅ Action Buttons */}
