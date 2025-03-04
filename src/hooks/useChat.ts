@@ -29,7 +29,7 @@ const fetchChatResponse = async (
       const parsedData = JSON.parse(accumulatedText);
       const streamedMessage = parsedData?.choices?.[0]?.message?.content || "";
       onStreamUpdate(streamedMessage); // ✅ Real-time update
-    } catch (error) {
+    } catch {
       // JSON parsing may fail initially; continue accumulating text
     }
   }

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 export async function POST(req: Request) {
   try {
@@ -34,12 +34,14 @@ export async function POST(req: Request) {
     console.log(response.data.choices[0].message);
 
     return NextResponse.json(response.data, { status: 200 });
-  } catch (error: any) {
-    console.error("API Error:", error?.response?.data || error.message);
+  } catch (error: unknown) {
+    const axiosError = error as AxiosError;
+    console.error("API Error:", axiosError?.response?.data || (error as Error).message);
 
     return NextResponse.json(
-      { error: error?.response?.data?.message || "Failed to fetch response" },
-      { status: error?.response?.status || 500 }
+      // @ts-expect-error Axios response data shape is not fully typed
+      { error: axiosError?.response?.data?.message || "Failed to fetch response" },
+      { status: axiosError?.response?.status || 500 }
     );
   }
 }

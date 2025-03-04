@@ -1,4 +1,4 @@
-import Loader from "./Loader";
+import Image from 'next/image';
 
 interface ChatMessageProps {
   role: "user" | "ai";
@@ -19,10 +19,12 @@ export default function ChatMessage({
     >
       {/* AI Avatar */}
       {role === "ai" && (
-        <img
+        <Image
           src="/ai-avatar.png"
           alt="AI"
-          className="w-8 h-8 rounded-full mr-2 self-start"
+          width={32}
+          height={32}
+          className="rounded-full mr-2 self-start"
         />
       )}
 
@@ -40,12 +42,13 @@ export default function ChatMessage({
         </span>
       </div>
 
-      {/* User Avatar */}
       {role === "user" && (
-        <img
+        <Image
           src="/user-avatar.png"
           alt="User"
-          className="w-8 h-8 rounded-full ml-2 self-start"
+          width={32}
+          height={32}
+          className="rounded-full ml-2 self-start"
         />
       )}
     </div>

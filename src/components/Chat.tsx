@@ -30,9 +30,12 @@ export default function Chat() {
     ]);
 
     chatMutation.mutate(userMessage, {
-      onSuccess: (response: any) => {
+      onSuccess: (response: string) => {
+        const parsedResponse: { choices?: { message?: { content: string } }[] } = JSON.parse(response);
         const aiResponse =
-          response.choices?.[0]?.message?.content || "No response received";
+          parsedResponse.choices?.[0]?.message?.content || "No response received";
+        // const aiResponse =
+        //   response.choices?.[0]?.message?.content || "No response received";
         setChatHistory((prev) => [
           ...prev.slice(0, -1),
           { user: userMessage, bot: aiResponse },
